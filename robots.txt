@@ -1,0 +1,65 @@
+# ============================================================
+# robots.txt — Fahadderek AI
+# https://fahadderek.ai/
+# Last updated: 2026-04-12
+# ============================================================
+
+# Allow all well-behaved crawlers
+User-agent: *
+Allow: /
+
+# Block admin, API, and private directories (add as needed)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+
+# Block query parameters that create duplicate content
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
+# Crawl delay for bots that respect it
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Google Image
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /images/
+
+# Bing / MSN
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# AI crawlers — allow for legitimate indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+# ============================================================
+# Sitemap location — critical for SEO indexing
+# ============================================================
+Sitemap: https://fahadderek.ai/sitemap.xml
