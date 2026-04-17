@@ -1314,15 +1314,7 @@ a.contact-value:hover { color: var(--clr-blue-bright); text-shadow: 0 0 12px rgb
 
 /* Story Timeline */
 .timeline { position: relative; max-width: 800px; margin-inline: auto; }
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, transparent, var(--clr-blue-mid), var(--clr-cyan), transparent);
-  transform: translateX(-50%);
-  box-shadow: 0 0 12px rgba(0,180,255,0.3);
-}
+.timeline::before { display: none; }
 
 .timeline-item {
   display: flex;
@@ -1960,7 +1952,6 @@ a.cic-value:hover { color: var(--clr-blue-bright); }
   .cube-face.bottom { transform: rotateX(-90deg)  translateZ(90px); }
 
   /* About: timeline — left-aligned */
-  .timeline::before { left: 24px; transform: none; }
   .timeline-item {
     flex-direction: column !important;
     gap: var(--sp-4);
