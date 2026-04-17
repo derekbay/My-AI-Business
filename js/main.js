@@ -381,20 +381,38 @@ function initContactForm() {
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = 'Sending…';
 
-    /* Populate reply email in success message (contact.html) */
+    /* Populate reply email in success message */
     const emailInput = $('#email', form);
     const replyEl = $('#reply-email');
     if (emailInput && replyEl) replyEl.textContent = emailInput.value;
 
-    setTimeout(() => {
-      form.reset();
-      form.hidden = true;
-      if (success) success.hidden = false;
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
-      /* Scroll success into view on mobile */
-      if (success) success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 1200);
+    /* Build form payload for Web3Forms */
+    const data = new FormData(form);
+    data.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY'); /* ← replace with your key */
+    data.append('subject',    'New Inquiry from ' + (emailInput ? emailInput.value : 'your website'));
+    data.append('from_name',  'ClearPathDigital Website');
+
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+      .then(res => res.json())
+      .then(json => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        if (json.success) {
+          form.reset();
+          form.hidden = true;
+          if (success) {
+            success.hidden = false;
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } else {
+          alert('Something went wrong sending your message. Please email us directly at support@clearpathdigital.tech');
+        }
+      })
+      .catch(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        alert('Network error. Please email us directly at support@clearpathdigital.tech');
+      });
   });
 }
 
