@@ -194,7 +194,7 @@ body::after {
   z-index: 1;
 }
 
-section { padding-block: var(--sp-24); }
+section { padding-block: var(--sp-16); }
 
 /* ============================================================
    4. UTILITY CLASSES
@@ -235,7 +235,7 @@ section { padding-block: var(--sp-24); }
   text-align: center;
   max-width: 700px;
   margin-inline: auto;
-  margin-bottom: var(--sp-16);
+  margin-bottom: var(--sp-10);
 }
 
 .section-title {
@@ -500,7 +500,7 @@ section { padding-block: var(--sp-24); }
   position: relative;
   z-index: 1;
   text-align: center;
-  padding-block: var(--sp-20);
+  padding-block: var(--sp-16);
 }
 
 .hero-badge {
@@ -1988,7 +1988,7 @@ a.cic-value:hover { color: var(--clr-blue-bright); }
   }
 
   /* Reduce section padding */
-  section { padding-block: var(--sp-16); }
+  section { padding-block: var(--sp-12); }
 
   /* Nav: show hamburger */
   .nav-links { display: none; }
@@ -2155,8 +2155,8 @@ a.cic-value:hover { color: var(--clr-blue-bright); }
   .stat-divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,180,255,0.3), transparent); }
 
   /* Section spacing */
-  section { padding-block: var(--sp-12); }
-  .section-header { margin-bottom: var(--sp-8); }
+  section { padding-block: var(--sp-10); }
+  .section-header { margin-bottom: var(--sp-6); }
 
   /* Buttons */
   .btn { padding: 0.875rem 1.5rem; font-size: var(--fs-sm); }
