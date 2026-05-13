@@ -383,29 +383,20 @@
               Thank you! Your message has been sent. We'll be in touch within 24 hours.
             </div>
 
-            <!--
-              Formspree integration:
-              1. Go to https://formspree.io and create a free account
-              2. Create a new form pointed at support@clearpathdigital.digital
-              3. Replace YOUR_FORM_ID below with your actual form ID
-            -->
             <form
               id="contact-form"
-              action="https://formspree.io/f/YOUR_FORM_ID"
+              action="https://api.web3forms.com/submit"
               method="POST"
               novalidate
               aria-label="Contact form"
             >
-              <!-- Required by Formspree: custom subject line -->
-              <input type="hidden" name="_subject" value="New Contact from ClearPath Digital" />
+              <!-- Web3Forms: paste your access key here (get it free at web3forms.com) -->
+              <input type="hidden" name="access_key" value="PASTE_YOUR_KEY_HERE" />
 
-              <!-- Honeypot spam protection: leave blank, bots fill it -->
+              <!-- Honeypot spam protection: bots fill this, humans don't -->
               <div class="hp-field" aria-hidden="true">
-                <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" />
+                <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" />
               </div>
-
-              <!-- Redirect back to this page after submit -->
-              <input type="hidden" name="_next" value="contact.html?sent=1" />
 
               <!-- Full Name -->
               <div class="field">

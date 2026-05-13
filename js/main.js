@@ -386,11 +386,10 @@ function initContactForm() {
     const replyEl = $('#reply-email');
     if (emailInput && replyEl) replyEl.textContent = emailInput.value;
 
-    /* Build form payload for Web3Forms */
+    /* Build form payload for Web3Forms — access_key comes from hidden field in the form */
     const data = new FormData(form);
-    data.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY'); /* ← replace with your key */
-    data.append('subject',    'New Inquiry from ' + (emailInput ? emailInput.value : 'your website'));
-    data.append('from_name',  'ClearPathDigital Website');
+    data.set('subject',   'New Contact from ClearPath Digital');
+    data.set('from_name', 'ClearPathDigital Website');
 
     fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       .then(res => res.json())
@@ -405,7 +404,7 @@ function initContactForm() {
             success.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         } else {
-          alert('Something went wrong sending your message. Please email us directly at support@clearpathdigital.tech');
+          alert('Something went wrong sending your message. Please email us directly at support@clearpathdigital.digital');
         }
       })
       .catch(() => {
