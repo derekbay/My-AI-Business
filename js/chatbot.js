@@ -3,7 +3,7 @@
 
   var KEY = 'AIzaSyDjltC3gDG6OwZq9bEjEKmqJkpmHrl2Jvc';
   var API  = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + KEY;
-  var SYS  = 'You are ClearPath Digital assistant. Help visitors with questions about services. Be short and friendly.';
+  var SYS  = 'You are the ClearPath Digital website assistant. ClearPathDigital is a boutique AI consultancy that offers three services: (1) Website Revamp — redesigning outdated websites into fast, modern, conversion-focused sites delivered in 2-4 weeks; (2) SEO & AEO Optimisation — helping businesses rank on Google and get discovered by AI search engines like ChatGPT and Perplexity through on-page SEO, technical SEO, and Answer Engine Optimisation; (3) AI Chatbot Integration — adding a 24/7 AI assistant trained on the client\'s business to answer questions, capture leads, and book calls. To contact or book a discovery call, visitors can email support@clearpathdigital.digital or use the contact page. Be helpful, concise, and friendly. If asked about pricing, say projects start from $999 and encourage them to book a free discovery call.';
 
   var history = [];
   var isOpen  = false;
@@ -165,6 +165,15 @@
     .then(function (res) { return res.json(); })
     .then(function (data) {
       dots.remove();
+
+      if (data && data.error) {
+        console.error('Gemini error:', data.error);
+        addMsg('API error: ' + (data.error.message || data.error.status || 'unknown'), 'bot');
+        sendBtn.disabled = false;
+        inputEl.focus();
+        return;
+      }
+
       var reply = (
         data &&
         data.candidates &&
@@ -173,16 +182,17 @@
         data.candidates[0].content.parts &&
         data.candidates[0].content.parts[0] &&
         data.candidates[0].content.parts[0].text
-      ) || 'Sorry, I couldn’t fetch a response right now. Email us at support@clearpathdigital.digital';
+      ) || 'Sorry, I could not get a response right now. Please email support@clearpathdigital.digital';
 
       history.push({ role: 'model', parts: [{ text: reply }] });
       addMsg(reply, 'bot');
       sendBtn.disabled = false;
       inputEl.focus();
     })
-    .catch(function () {
+    .catch(function (err) {
       dots.remove();
-      addMsg('Network error. Please email us at support@clearpathdigital.digital', 'bot');
+      console.error('Chatbot fetch error:', err);
+      addMsg('Network error — could not reach the AI. Please email support@clearpathdigital.digital', 'bot');
       sendBtn.disabled = false;
       inputEl.focus();
     });
