@@ -561,8 +561,18 @@ section { padding-block: var(--sp-16); }
   justify-content: center;
   gap: var(--sp-4);
   flex-wrap: wrap;
-  margin-bottom: var(--sp-16);
+  margin-bottom: var(--sp-4);
   animation: fadeInUp 0.8s var(--ease-out) 0.3s both;
+}
+
+.hero-cta-note {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--clr-text-2);
+  opacity: 0.7;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--sp-12);
+  animation: fadeInUp 0.8s var(--ease-out) 0.45s both;
 }
 
 .hero-stats {
