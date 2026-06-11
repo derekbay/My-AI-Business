@@ -29,16 +29,30 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "url": "https://clearpathdigital.tech/about.html",
-    "name": "About ClearPathDigital",
-    "description": "ClearPathDigital's mission, founding story, and approach to AI-powered business transformation.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "ClearPathDigital",
-      "url": "https://clearpathdigital.tech/",
-      "email": "support@clearpathdigital.tech"
-    }
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "url": "https://clearpathdigital.digital/about.html",
+        "name": "About ClearPathDigital — Boutique AI Consultancy for Small Businesses",
+        "description": "Meet the founder behind ClearPathDigital and learn the mission, story, and values driving this boutique AI consultancy.",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://clearpathdigital.digital/#organization",
+          "name": "ClearPathDigital",
+          "url": "https://clearpathdigital.digital/",
+          "email": "support@clearpathdigital.digital"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://clearpathdigital.digital/#founder",
+        "name": "The Founder",
+        "jobTitle": "Founder & AI Consultant",
+        "worksFor": { "@id": "https://clearpathdigital.digital/#organization" },
+        "url": "https://clearpathdigital.digital/about.html",
+        "description": "Solo founder of ClearPathDigital, a boutique AI consultancy helping small businesses grow online through website revamps, SEO & AEO, and AI chatbot integration."
+      }
+    ]
   }
   </script>
 </head>
@@ -61,8 +75,6 @@
       <nav class="nav-links" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="nav-link">Home</a>
         <a href="index.html#services" class="nav-link">Services</a>
-        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
-        <a href="index.html#pricing" class="nav-link">Pricing</a>
         <a href="about.html" class="nav-link active">About</a>
         <a href="process.html" class="nav-link">Process</a>
         <a href="contact.html" class="nav-link nav-cta nav-cta-outline">Book a Discovery Call</a>
@@ -72,8 +84,6 @@
     <div class="mobile-menu" id="mobile-menu">
       <a href="index.html" class="mobile-link">Home</a>
       <a href="index.html#services" class="mobile-link">Services</a>
-      <a href="index.html#portfolio" class="mobile-link">Portfolio</a>
-      <a href="index.html#pricing" class="mobile-link">Pricing</a>
       <a href="about.html" class="mobile-link">About</a>
       <a href="process.html" class="mobile-link">Process</a>
       <a href="contact.html" class="mobile-link mobile-cta">Book a Discovery Call</a>
@@ -127,7 +137,7 @@
               Every engagement starts with your business outcome in mind. We work backwards from there — selecting the right tools, building to your constraints, and delivering something that makes a real difference to how you operate.
             </p>
             <p>
-              Whether you need your first AI chatbot, a custom AI agent, or a full workflow automation — we chart a clear path from where you are to where you want to be.
+              Whether you need a fresh website, better search visibility, or an AI assistant for your business — I chart a clear path from where you are to where you want to be.
             </p>
           </div>
         </div>
@@ -214,6 +224,67 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER PROFILE -->
+    <!-- TODO: Replace [Your Name] and [Your Title / Background] with your real details -->
+    <section id="founder" aria-labelledby="founder-heading" style="background:var(--clr-bg-2);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Meet the Founder</span>
+          <h2 id="founder-heading" class="section-title">The Person Behind <span class="gradient-text">ClearPathDigital</span></h2>
+        </div>
+        <div style="display:grid;grid-template-columns:240px 1fr;gap:var(--sp-14);align-items:start;max-width:880px;margin:0 auto;" class="founder-grid">
+
+          <!-- Avatar / Photo -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:var(--sp-4);">
+            <div style="width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,rgba(0,100,255,0.2),rgba(0,195,255,0.1));border:2px solid rgba(0,180,255,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-label="Founder photo placeholder">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(0,180,255,0.5)" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div style="text-align:center;">
+              <!-- Replace [Your Name] below -->
+              <div style="font-family:var(--font-display);font-size:var(--fs-lg);font-weight:var(--fw-bold);color:var(--clr-white);">[Your Name]</div>
+              <div style="font-size:var(--fs-sm);color:var(--clr-cyan);margin-top:var(--sp-1);">Founder &amp; AI Consultant</div>
+              <div style="font-size:var(--fs-xs);color:var(--clr-text-3);margin-top:var(--sp-1);">ClearPathDigital</div>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div>
+            <p style="font-size:var(--fs-base);color:var(--clr-text-2);line-height:1.85;margin-bottom:var(--sp-5);">
+              I started ClearPathDigital because I kept seeing the same problem: small business owners hearing endless noise about AI, spending money on tools that never delivered, and walking away frustrated with nothing to show for it.
+            </p>
+            <p style="font-size:var(--fs-base);color:var(--clr-text-2);line-height:1.85;margin-bottom:var(--sp-5);">
+              My background is in <!-- Replace with your background --> [Your Title / Background]. That experience taught me one thing clearly: practical, well-scoped solutions beat complex ones every time. You don't need the most sophisticated AI — you need the right one, built properly, for your specific situation.
+            </p>
+            <p style="font-size:var(--fs-base);color:var(--clr-text-2);line-height:1.85;margin-bottom:var(--sp-8);">
+              When you work with ClearPathDigital, you work with me directly — not a junior account manager or a team who has never spoken to you. Every project gets my full attention, from the first call to the final handover.
+            </p>
+
+            <!-- Trust markers -->
+            <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);">
+              <span style="display:inline-flex;align-items:center;gap:var(--sp-2);background:var(--clr-surface);border:1px solid var(--clr-border-2);border-radius:var(--r-full);padding:var(--sp-2) var(--sp-4);font-size:var(--fs-xs);color:var(--clr-text-2);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--clr-cyan)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Direct founder access on every project
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:var(--sp-2);background:var(--clr-surface);border:1px solid var(--clr-border-2);border-radius:var(--r-full);padding:var(--sp-2) var(--sp-4);font-size:var(--fs-xs);color:var(--clr-text-2);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--clr-cyan)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Fixed price agreed before work starts
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:var(--sp-2);background:var(--clr-surface);border:1px solid var(--clr-border-2);border-radius:var(--r-full);padding:var(--sp-2) var(--sp-4);font-size:var(--fs-xs);color:var(--clr-text-2);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--clr-cyan)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Results explained in plain English
+              </span>
+            </div>
+
+            <div style="margin-top:var(--sp-8);">
+              <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -326,7 +397,6 @@
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--sp-2);">
             <li><a href="index.html" class="footer-link">Home</a></li>
             <li><a href="index.html#services" class="footer-link">Services</a></li>
-            <li><a href="index.html#portfolio" class="footer-link">Portfolio</a></li>
             <li><a href="about.html" class="footer-link">About</a></li>
             <li><a href="process.html" class="footer-link">Process</a></li>
             <li><a href="contact.html" class="footer-link">Contact</a></li>
@@ -356,6 +426,6 @@
   </button>
 
   <script src="js/main.js" defer></script>
-  <script src="js/chatbot.js" defer></script>
+  <script src="//code.tidio.co/2qh3d02vigbgudg4cw5vve6lf5jschsr.js" async></script>
 </body>
 </html>

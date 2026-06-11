@@ -2138,6 +2138,7 @@ a.cic-value:hover { color: var(--clr-blue-bright); }
 
   /* Pricing: single col */
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+  .founder-grid { grid-template-columns: 1fr !important; justify-items: center; }
 
   /* How it works: vertical stack */
   .steps-container {
